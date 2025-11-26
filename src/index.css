@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  /* ===== 다크 모드 (default) ===== */
+  --color-bg: #1b1b1d;
+  --color-sidebar: #151517;
+  --color-sidebar-2: #262628;
+  --color-primary: #cde9fa;
+  --color-text: #e5e5e6;
+  --color-muted: #94959a;
+  --color-border: #28282a;
+  --danger: #ff6b6b;
+  --success: #7ad69f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  font-family: "Pretendard", system-ui, sans-serif;
+}

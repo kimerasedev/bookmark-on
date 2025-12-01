@@ -1,0 +1,42 @@
+export const bookmarks = [
+  {
+    id: "1",
+    title: "React 공식 문서 문서 문서 문서 문서 문서 문서 문서",
+    url: "https://react.dev",
+    thumbnail: "/images/dummy-thumbnail.jpg",
+    categoryId: "frontend",
+    createdAt: "2025-11-26",
+  },
+  {
+    id: "2",
+    title: "Node.js Best Practices",
+    url: "https://github.com/goldbergyoni/nodebestpractices",
+    thumbnail: "/images/dummy-thumbnail.jpg",
+    categoryId: "backend",
+    createdAt: "2025-11-21",
+  },
+  {
+    id: "3",
+    title: "Figma Tips",
+    url: "https://figma.com",
+    thumbnail: "/images/dummy-thumbnail.jpg",
+    categoryId: "design",
+    createdAt: "2025-11-20",
+  },
+  {
+    id: "4",
+    title: "Figma Tips222",
+    url: "https://figma.com",
+    thumbnail: "/images/dummy-thumbnail.jpg",
+    categoryId: "english",
+    createdAt: "2025-11-20",
+  },
+  {
+    id: "5",
+    title: "Figma Tips333",
+    url: "https://figma.com",
+    thumbnail: "/images/dummy-thumbnail.jpg",
+    categoryId: "etc",
+    createdAt: "2025-11-20",
+  },
+];

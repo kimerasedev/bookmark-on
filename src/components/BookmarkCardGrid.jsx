@@ -19,11 +19,14 @@ export default function BookmarkCardGrid({
           <div>・</div>
           <span>{createdAt}</span>
         </div>
-        <div className="flex items-center gap-1 text-muted text-sm line-clamp-1">
-          <a href={url} className="hover:underline underline-offset-2">
-            {url}
+        <div className="flex items-center gap-1 text-muted text-sm">
+          <a
+            href={url}
+            className="overflow-hidden text-ellipsis whitespace-nowrap max-w-[230px] hover:underline underline-offset-2"
+          >
+            {url.replace(/^https?:\/\//, "")}
           </a>
-          <ArrowSquareOutIcon size={15} />
+          <ArrowSquareOutIcon size={15} className="shrink-0" />
         </div>
       </div>
     </div>

@@ -7,8 +7,13 @@ import {
 } from "@phosphor-icons/react";
 import SidebarItem from "../SidebarItem";
 import UserProfile from "../UserProfile";
+import { categories } from "../../data/categories";
 
-export default function Sidebar() {
+export default function Sidebar({
+  selectedCategoryId,
+  onSelectCategory,
+  bookmarks,
+}) {
   return (
     <aside className="flex flex-col justify-between bg-sidebar w-64 min-h-screen border-r border-border">
       <div className="px-3 py-5">
@@ -19,15 +24,14 @@ export default function Sidebar() {
               북마크온
             </span>
           </div>
-          {/* <button className="p-2 rounded-md hover:bg-bg">
-            <PlusIcon size={18} weight="bold" />
-          </button> */}
         </div>
         <div className="flex flex-col gap-1 mb-6">
           <SidebarItem
             icon={BookmarkSimpleIcon}
             label="모든 북마크"
-            count={12}
+            count={bookmarks.length}
+            isActive={selectedCategoryId === "all"}
+            onClick={() => onSelectCategory("all")}
           />
           <SidebarItem icon={TrashIcon} label="휴지통" count={0} />
           <SidebarItem icon={GearIcon} label="설정" />
@@ -39,22 +43,20 @@ export default function Sidebar() {
           카테고리
         </div>
 
-        {/* 임시 카테고리 */}
         <div className="flex flex-col gap-1">
-          <SidebarItem icon={FolderIcon} label="개발" count={12} />
-          <SidebarItem icon={FolderIcon} label="영어 공부" count={6} />
-          <SidebarItem icon={FolderIcon} label="디자인" count={21} />
-          <SidebarItem icon={FolderIcon} label="자기계발" count={12} />
-          <SidebarItem icon={FolderIcon} label="자기계발" count={12} />
-          <SidebarItem icon={FolderIcon} label="자기계발" count={12} />
-          <SidebarItem icon={FolderIcon} label="자기계발" count={12} />
-          <SidebarItem icon={FolderIcon} label="자기계발" count={12} />
-          <SidebarItem icon={FolderIcon} label="자기계발" count={12} />
-          <SidebarItem icon={FolderIcon} label="자기계발" count={12} />
-          <SidebarItem icon={FolderIcon} label="자기계발" count={12} />
-          <SidebarItem icon={FolderIcon} label="자기계발" count={12} />
-          <SidebarItem icon={FolderIcon} label="자기계발" count={12} />
-          <SidebarItem icon={FolderIcon} label="자기계발" count={12} />
+          {categories.map((c) => {
+            const count = bookmarks.filter((b) => b.categoryId === c.id).length;
+            return (
+              <SidebarItem
+                key={c.id}
+                icon={FolderIcon}
+                label={c.label}
+                count={count}
+                isActive={selectedCategoryId === c.id}
+                onClick={() => onSelectCategory(c.id)}
+              />
+            );
+          })}
         </div>
       </div>
 

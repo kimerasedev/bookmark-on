@@ -39,4 +39,12 @@ export const bookmarks = [
     categoryId: "etc",
     createdAt: "2025-11-20",
   },
+  {
+    id: "6",
+    title: "666",
+    url: "https://figma.com",
+    thumbnail: "/images/dummy-thumbnail.jpg",
+    categoryId: "design",
+    createdAt: "2025-11-20",
+  },
 ];

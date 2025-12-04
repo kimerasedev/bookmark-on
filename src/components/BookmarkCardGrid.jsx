@@ -1,4 +1,5 @@
 import { ArrowSquareOutIcon, FolderIcon } from "@phosphor-icons/react";
+import { formatDate } from "../utils/formatDate";
 
 export default function BookmarkCardGrid({
   title,
@@ -17,7 +18,7 @@ export default function BookmarkCardGrid({
           <FolderIcon size={14} />
           <span>{categoryLabel}</span>
           <div>・</div>
-          <span>{createdAt}</span>
+          <span>{formatDate(createdAt)}</span>
         </div>
         <div className="flex items-center gap-1 text-muted text-sm">
           <a
